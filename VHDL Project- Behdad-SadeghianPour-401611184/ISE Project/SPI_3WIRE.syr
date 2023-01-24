@@ -1,0 +1,318 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.11 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.11 secs
+ 
+--> Reading design: SPI_3WIRE.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "SPI_3WIRE.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "SPI_3WIRE"
+Output Format                      : NGC
+Target Device                      : xc6slx4-3-tqg144
+
+---- Source Options
+Top Module Name                    : SPI_3WIRE
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+---- Other Options
+Cores Search Directories           : {"ipcore_dir"  }
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "C:\Users\Behdad\Desktop\tt\tt\ipcore_dir\DCM_40_40MHz.vhd" into library work
+Parsing entity <DCM_40_40MHz>.
+Parsing architecture <xilinx> of entity <dcm_40_40mhz>.
+Parsing VHDL file "C:\Users\Behdad\Desktop\tt\tt\tt.vhd" into library work
+Parsing entity <SPI_3WIRE>.
+Parsing architecture <behaviroal> of entity <spi_3wire>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <SPI_3WIRE> (architecture <behaviroal>) with generics from library <work>.
+WARNING:HDLCompiler:871 - "C:\Users\Behdad\Desktop\tt\tt\tt.vhd" Line 60: Using initial value 0 for adr since it is never assigned
+
+Elaborating entity <DCM_40_40MHz> (architecture <xilinx>) from library <work>.
+WARNING:HDLCompiler:1127 - "C:\Users\Behdad\Desktop\tt\tt\tt.vhd" Line 108: Assignment to count ignored, since the identifier is never used
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <SPI_3WIRE>.
+    Related source file is "C:\Users\Behdad\Desktop\tt\tt\tt.vhd".
+        DataWidth_CMD = 24
+        SlavesNum = 1
+INFO:Xst:3210 - "C:\Users\Behdad\Desktop\tt\tt\tt.vhd" line 93: Output port <CLK_OUT1> of the instance <DCM_BLOCK> is unconnected or connected to loadless signal.
+    Found 1-bit register for signal <DATA_BUF>.
+    Found 1-bit register for signal <LoadEnable_BUF>.
+    Found 1-bit register for signal <SCLK>.
+    Found 32-bit register for signal <Counter>.
+    Found 3-bit register for signal <State>.
+    Found 1-bit register for signal <SCLK_Pha_BUF>.
+    Found 1-bit register for signal <counter_flag>.
+    Found 32-bit register for signal <counter_delay>.
+    Found 1-bit register for signal <Busy_BUF>.
+    Found finite state machine <FSM_0> for signal <State>.
+    -----------------------------------------------------------------------
+    | States             | 5                                              |
+    | Transitions        | 16                                             |
+    | Inputs             | 7                                              |
+    | Outputs            | 4                                              |
+    | Clock              | CLOCK (rising_edge)                            |
+    | Power Up State     | idle                                           |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 32-bit adder for signal <counter_delay[31]_GND_5_o_add_9_OUT> created at line 161.
+    Found 32-bit subtractor for signal <Counter[31]_GND_5_o_sub_3_OUT<31:0>> created at line 146.
+    Found 32x1-bit Read Only RAM for signal <Counter[4]_X_5_o_Mux_1_o>
+    Found 32-bit comparator greater for signal <n0017> created at line 153
+    Summary:
+	inferred   1 RAM(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred  70 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred  10 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <SPI_3WIRE> synthesized.
+
+Synthesizing Unit <DCM_40_40MHz>.
+    Related source file is "C:\Users\Behdad\Desktop\tt\tt\ipcore_dir\DCM_40_40MHz.vhd".
+    Summary:
+	no macro.
+Unit <DCM_40_40MHz> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 32x1-bit single-port Read Only RAM                    : 1
+# Adders/Subtractors                                   : 2
+ 32-bit adder                                          : 1
+ 32-bit subtractor                                     : 1
+# Registers                                            : 8
+ 1-bit register                                        : 6
+ 32-bit register                                       : 2
+# Comparators                                          : 1
+ 32-bit comparator greater                             : 1
+# Multiplexers                                         : 10
+ 1-bit 2-to-1 multiplexer                              : 6
+ 32-bit 2-to-1 multiplexer                             : 4
+# FSMs                                                 : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+Synthesizing (advanced) Unit <SPI_3WIRE>.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_Counter[4]_X_5_o_Mux_1_o> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 32-word x 1-bit                     |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <Counter<4:0>>  |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <SPI_3WIRE> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 32x1-bit single-port distributed Read Only RAM        : 1
+# Adders/Subtractors                                   : 2
+ 32-bit adder                                          : 1
+ 32-bit subtractor                                     : 1
+# Registers                                            : 70
+ Flip-Flops                                            : 70
+# Comparators                                          : 1
+ 32-bit comparator greater                             : 1
+# Multiplexers                                         : 9
+ 1-bit 2-to-1 multiplexer                              : 5
+ 32-bit 2-to-1 multiplexer                             : 4
+# FSMs                                                 : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <FSM_0> on signal <State[1:3]> with sequential encoding.
+-------------------------
+ State       | Encoding
+-------------------------
+ idle        | 000
+ writestatus | 011
+ initdelay   | 001
+ finaldelay  | 010
+ finalstate  | 100
+-------------------------
+
+Optimizing unit <SPI_3WIRE> ...
+WARNING:Xst:1293 - FF/Latch <counter_delay_31> has a constant value of 0 in block <SPI_3WIRE>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <counter_delay_30> has a constant value of 0 in block <SPI_3WIRE>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <counter_delay_29> has a constant value of 0 in block <SPI_3WIRE>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <counter_delay_28> has a constant value of 0 in block <SPI_3WIRE>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <counter_delay_27> has a constant value of 0 in block <SPI_3WIRE>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <counter_delay_26> has a constant value of 0 in block <SPI_3WIRE>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <counter_delay_25> has a constant value of 0 in block <SPI_3WIRE>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <counter_delay_24> has a constant value of 0 in block <SPI_3WIRE>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <counter_delay_23> has a constant value of 0 in block <SPI_3WIRE>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <counter_delay_22> has a constant value of 0 in block <SPI_3WIRE>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <counter_delay_21> has a constant value of 0 in block <SPI_3WIRE>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <counter_delay_20> has a constant value of 0 in block <SPI_3WIRE>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <counter_delay_19> has a constant value of 0 in block <SPI_3WIRE>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <counter_delay_18> has a constant value of 0 in block <SPI_3WIRE>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <counter_delay_17> has a constant value of 0 in block <SPI_3WIRE>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <counter_delay_16> has a constant value of 0 in block <SPI_3WIRE>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <counter_delay_15> has a constant value of 0 in block <SPI_3WIRE>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <counter_delay_14> has a constant value of 0 in block <SPI_3WIRE>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <counter_delay_13> has a constant value of 0 in block <SPI_3WIRE>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <counter_delay_12> has a constant value of 0 in block <SPI_3WIRE>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <counter_delay_11> has a constant value of 0 in block <SPI_3WIRE>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <counter_delay_10> has a constant value of 0 in block <SPI_3WIRE>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <counter_delay_9> has a constant value of 0 in block <SPI_3WIRE>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <counter_delay_8> has a constant value of 0 in block <SPI_3WIRE>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <counter_delay_7> has a constant value of 0 in block <SPI_3WIRE>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <counter_delay_6> has a constant value of 0 in block <SPI_3WIRE>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <counter_delay_5> has a constant value of 0 in block <SPI_3WIRE>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <counter_delay_4> has a constant value of 0 in block <SPI_3WIRE>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <counter_delay_3> has a constant value of 0 in block <SPI_3WIRE>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <counter_delay_2> has a constant value of 0 in block <SPI_3WIRE>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <Counter_5> in Unit <SPI_3WIRE> is equivalent to the following 26 FFs/Latches, which will be removed : <Counter_6> <Counter_7> <Counter_8> <Counter_9> <Counter_10> <Counter_11> <Counter_12> <Counter_13> <Counter_14> <Counter_15> <Counter_16> <Counter_17> <Counter_18> <Counter_19> <Counter_20> <Counter_21> <Counter_22> <Counter_23> <Counter_24> <Counter_25> <Counter_26> <Counter_27> <Counter_28> <Counter_29> <Counter_30> <Counter_31> 
+
+Mapping all equations...
+ERROR:Xst:2035 - Port <CLOCK> has illegal connections. This port is connected to an input buffer and other components.
+Input Buffer:
+   Port <I> of node <DCM_BLOCK/clkin1_buf> (IBUFG) in unit <SPI_3WIRE>
+Other Components:
+   Port <C> of node <counter_flag> (FDE) in unit <SPI_3WIRE>
+   Port <C> of node <SCLK> (FDRE) in unit <SPI_3WIRE>
+   Port <C> of node <SCLK_Pha_BUF> (FDE) in unit <SPI_3WIRE>
+   Port <C> of node <counter_delay_0> (FDE) in unit <SPI_3WIRE>
+   Port <C> of node <counter_delay_1> (FDE) in unit <SPI_3WIRE>
+   Port <C> of node <Counter_0> (FDSE) in unit <SPI_3WIRE>
+   Port <C> of node <Counter_1> (FDSE) in unit <SPI_3WIRE>
+   Port <C> of node <Counter_2> (FDSE) in unit <SPI_3WIRE>
+   Port <C> of node <Counter_3> (FDRE) in unit <SPI_3WIRE>
+   Port <C> of node <Counter_4> (FDSE) in unit <SPI_3WIRE>
+   Port <C> of node <Counter_5> (FDRE) in unit <SPI_3WIRE>
+   Port <C> of node <Busy_BUF> (FDSE) in unit <SPI_3WIRE>
+   Port <C> of node <LoadEnable_BUF_0> (FDSE) in unit <SPI_3WIRE>
+   Port <C> of node <DATA_BUF> (FDRE) in unit <SPI_3WIRE>
+   Port <C> of node <State_FSM_FFd3> (FD) in unit <SPI_3WIRE>
+   Port <C> of node <State_FSM_FFd2> (FD) in unit <SPI_3WIRE>
+   Port <C> of node <State_FSM_FFd1> (FD) in unit <SPI_3WIRE>
+
+
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 5.50 secs
+ 
+--> 
+
+Total memory usage is 4518604 kilobytes
+
+Number of errors   :    1 (   0 filtered)
+Number of warnings :   32 (   0 filtered)
+Number of infos    :    3 (   0 filtered)
+

@@ -1,0 +1,37 @@
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib secureip -o C:/Users/Behdad/Desktop/tt/tt/TB_isim_beh.exe -prj C:/Users/Behdad/Desktop/tt/tt/TB_beh.prj work.TB 
+ISim P.20131013 (signature 0x7708f090)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Parsing VHDL file "C:/Users/Behdad/Desktop/tt/tt/ipcore_dir/DCM_40_40MHz.vhd" into library work
+Parsing VHDL file "C:/Users/Behdad/Desktop/tt/tt/tt.vhd" into library work
+Parsing VHDL file "C:/Users/Behdad/Desktop/tt/tt/TB.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Compiling package standard
+Compiling package std_logic_1164
+Compiling package numeric_std
+Compiling package vcomponents
+Compiling package textio
+Compiling package vital_timing
+Compiling package std_logic_arith
+Compiling package std_logic_unsigned
+Compiling architecture ibuf_v of entity IBUF [\IBUF("DONT_CARE","0",true,"AUTO...]
+Compiling package vital_primitives
+Compiling package vpkg
+Compiling architecture ibufg_v of entity IBUFG [\IBUFG("DONT_CARE","0",true,"DEF...]
+Compiling architecture dcm_sp_clock_divide_by_2_v of entity dcm_sp_clock_divide_by_2 [dcm_sp_clock_divide_by_2_default]
+Compiling architecture dcm_sp_maximum_period_check_v of entity dcm_sp_maximum_period_check [\dcm_sp_maximum_period_check("*"...]
+Compiling architecture dcm_sp_maximum_period_check_v of entity dcm_sp_maximum_period_check [\dcm_sp_maximum_period_check("*"...]
+Compiling architecture dcm_sp_clock_lost_v of entity dcm_sp_clock_lost [dcm_sp_clock_lost_default]
+Compiling architecture dcm_sp_v of entity DCM_SP [\DCM_SP(true,"*",true,false,2.0,...]
+Compiling architecture bufg_v of entity BUFG [bufg_default]
+Compiling architecture xilinx of entity DCM_40_40MHz [dcm_40_40mhz_default]
+Compiling architecture behaviroal of entity SPI_3WIRE [\SPI_3WIRE(23,1)\]
+Compiling architecture behavior of entity tb
+Time Resolution for simulation is 1ps.
+Waiting for 12 sub-compilation(s) to finish...
+Compiled 31 VHDL Units
+Built simulation executable C:/Users/Behdad/Desktop/tt/tt/TB_isim_beh.exe
+Fuse Memory Usage: 61632 KB
+Fuse CPU Usage: 1187 ms

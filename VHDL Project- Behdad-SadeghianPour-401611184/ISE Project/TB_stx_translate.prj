@@ -1,0 +1,2 @@
+vhdl isim_temp "netgen/translate/SPI_3WIRE_translate.vhd"
+vhdl isim_temp "TB.vhd"
