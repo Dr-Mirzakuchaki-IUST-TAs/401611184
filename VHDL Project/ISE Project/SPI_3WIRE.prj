@@ -1,0 +1,2 @@
+vhdl work "ipcore_dir/DCM_40_40MHz.vhd"
+vhdl work "tt.vhd"

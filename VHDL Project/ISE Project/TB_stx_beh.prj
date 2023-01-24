@@ -1,0 +1,3 @@
+vhdl isim_temp "ipcore_dir/DCM_40_40MHz.vhd"
+vhdl isim_temp "tt.vhd"
+vhdl isim_temp "TB.vhd"

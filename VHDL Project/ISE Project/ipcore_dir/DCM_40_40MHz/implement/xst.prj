@@ -1,0 +1,2 @@
+vhdl work ../../DCM_40_40MHz.vhd
+vhdl work ../example_design/DCM_40_40MHz_exdes.vhd
